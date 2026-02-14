@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Naomi 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg,#2b001b,#5a0f3c);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:rgba(0,0,0,0.75);
+    padding:35px;
+    border-radius:25px;
+    max-width:700px;
+    width:90%;
+    box-shadow:0 0 40px rgba(255,80,140,0.5);
+    animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+
+h1{
+    text-align:center;
+    color:#ff6b9a;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    border-radius:15px;
+    border:none;
+    margin-top:15px;
+    text-align:center;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 30px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff2f75;
+}
+
+.error{
+    color:#ff9dbb;
+    margin-top:10px;
+    text-align:center;
+}
+
+#carta{
+    display:none;
+    overflow-y:auto;
+    max-height:80vh;
+}
+
+.corazon{
+    font-size:60px;
+    text-align:center;
+    animation:latir 1s infinite;
+}
+
+@keyframes latir{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+.carta-texto{
+    font-size:18px;
+    line-height:1.8;
+    margin-top:20px;
+    color:#ffe3ec;
+}
+
+.firma{
+    margin-top:30px;
+    text-align:right;
+    font-style:italic;
+    color:#ffb3cc;
+}
+
+audio{
+    width:100%;
+    margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="login">
+    <h1>🔒 Acceso solo para Naomi</h1>
+    <p style="text-align:center;">Ingresa la fecha que cambió nuestras vidas 💕</p>
+    <input type="password" id="pass" placeholder="DD/MM/AAAA">
+    <button onclick="verificar()">Desbloquear</button>
+    <div class="error" id="error"></div>
+</div>
+
+<div class="container" id="carta">
+    <h1>Naomi 💖</h1>
+
+    <div class="corazon">❤️</div>
+
+    <div class="carta-texto">
+        Mi amor,
+
+        No sé en qué momento exacto empezó todo,  
+        pero sí sé que desde el <strong>4 de mayo de 2025</strong>  
+        mi vida tomó un rumbo completamente distinto.
+
+        Desde ese día, cada pensamiento, cada plan  
+        y cada sueño empezó a llevar tu nombre.
+
+        Te amo más de lo que a veces logro expresar con palabras.  
+        Te amo en lo simple y en lo complicado,  
+        en los días buenos y también en los días difíciles.  
+        Te amo incluso en la distancia,  
+        porque ni los kilómetros ni el tiempo  
+        han sido capaces de disminuir lo que siento por ti.
+
+        Gracias por quedarte.  
+        Gracias por confiar en mí.  
+        Gracias por cada conversación,  
+        cada risa, cada desvelo,  
+        cada momento que hemos compartido  
+        aunque no siempre estemos frente a frente.
+
+        Estoy profundamente agradecido con la vida  
+        por darme a alguien como tú.  
+        Me llena de orgullo decir que eres mi novia,  
+        que caminas conmigo,  
+        que eliges estar a mi lado.
+
+        Y hoy, 14 de febrero,  
+        no hay nada que me haga más feliz  
+        que saber que puedo pasar este día contigo,  
+        aunque sea en palabras, en promesas  
+        y en todo lo que aún nos falta por vivir.
+
+        Naomi, eres mi calma,  
+        mi refugio,  
+        mi alegría diaria  
+        y una de las razones más grandes  
+        por las que quiero ser mejor persona.
+
+        Si pudiera elegir otra vez,  
+        te elegiría a ti sin dudarlo.  
+        En esta vida y en todas las que existan.
+
+        Te amo más de lo que este código,  
+        esta carta  
+        o cualquier detalle pueda demostrar.
+    </div>
+
+    <div class="firma">
+        Con todo mi amor,  
+        tu novio 💖
+    </div>
+
+    <audio controls autoplay loop>
+        <source src="contigo.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+</div>
+
+<script>
+function verificar(){
+    const pass = document.getElementById("pass").value;
+    if(pass === "4/05/2025"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("carta").style.display="block";
+    } else {
+        document.getElementById("error").innerText="Esa no es la fecha correcta 💔";
+    }
+}
+</script>
+
+</body>
+</html>
